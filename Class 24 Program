@@ -1,0 +1,11 @@
+# ---------------------------class 24--------------------------
+ls=["A~B", "C~D"]
+
+rddls=sc.parallelize(ls)
+
+fmrddls=rddls.map(lambda x:x.split("~"))
+
+fmrddls2=rddls.flatMap(lambda x:x.split("~"))
+
+print(fmrddls.collect())
+print(fmrddls2.collect())
